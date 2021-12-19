@@ -1,24 +1,24 @@
-const square = document.querySelectorAll('square')
-const mole = document.querySelectorAll('mole')
-const timeLeft = document.querySelectorAll('#timeleft')
+const square = document.querySelectorAll('.square')
+const mole = document.querySelectorAll('.mole')
+const timeLeft = document.querySelectorAll('#time-left')
 let score = document.querySelector('#score')
 
 let result = 0;
 let currentTime = timeLeft.textContext
 
 function randomSquare(){
-    square.forEach(className =>{
+    square.forEach(className => {
         className.classList.remove('mole')
     })
-    let randomPosition = square[Math.floor(Math.random() = 9)]
+    let randomPosition = square[Math.floor(Math.random() * 9)]
     randomPosition.classList.add('mole')
 
-//assign the random position to hit position used later
+//assign the randomPosition to hitPosition used later
 hitPosition = randomPosition.id
 }
 
-square.forEach(id =>{
-    id.addEventListener('mouseup', () =>{
+square.forEach(id => {
+    id.addEventListener('mouseup', () => {
         if(id.id === hitPosition){
             result = result + 1
             score.textContext = result
@@ -35,12 +35,12 @@ moveMole()
 
 function countDown(){
     currentTime--
-    timeLeft.textContext= currentTime
+    timeLeft.textContext = currentTime
 
-if(currentTime === 0 ) {
-    clearInterval(timerId)
-    alert('GAME OVER! Your final score is' +result)
-}
+    if(currentTime === 0 ) {
+        clearInterval(timerId)
+        alert('GAME OVER! Your final score is' + result)
+    }
 }
 
 let timerId = setInterval(countdown, 1000)

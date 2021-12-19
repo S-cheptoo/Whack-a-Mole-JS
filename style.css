@@ -1,4 +1,5 @@
-.square{
+
+.square {
     width: 200px;
     height: 200px;
     border-style: solid;
@@ -10,10 +11,10 @@
     justify-content: center;
     align-content: center;
     width: 618px;
-    height: 618px ;
+    height: 618px;
 }
 
-.mole{
-    background-image: url('mole.jpg');
+.mole {
+    background-image: url('images/mole.jpg');
     background-size: cover;
 }
